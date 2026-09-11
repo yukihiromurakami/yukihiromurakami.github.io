@@ -14,7 +14,8 @@
   --sans: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-height, 95px) + 1rem); }
+/* Keep centered content aligned when a page or the terminal hides the scrollbar. */
+html { scrollbar-gutter: stable; scroll-behavior: smooth; scroll-padding-top: calc(var(--header-height, 95px) + 1rem); }
 body { margin: 0; background: linear-gradient(180deg, #f5f8fa 0, var(--paper) 28rem); color: var(--body); font-family: var(--sans); font-size: 1rem; line-height: 1.75; -webkit-font-smoothing: antialiased; }
 a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: .24em; }
 a:hover { text-decoration: underline; color: var(--ink); }
@@ -240,8 +241,8 @@ html.command-open { overflow: hidden; }
 }
 @media screen { .site-footer { padding-bottom: 4rem; } }
 .main-nav { gap: 1.45rem; }
-.main-nav a { border-bottom: 2px solid transparent; padding-block: .65rem .5rem; }
-.main-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent-bright); font-weight: 600; }
+.main-nav a { border-bottom: 2px solid transparent; padding-block: .65rem .5rem; font-weight: 500; }
+.main-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent-bright); }
 .page-intro { padding-block: 2.8rem 2.2rem; }
 .page-intro h1 { font-size: clamp(2.5rem, 4.3vw, 3.4rem); line-height: 1.16; margin: .7rem 0 1rem; letter-spacing: -.035em; }
 .page-lead { max-width: 46rem; font-size: 1.125rem; line-height: 1.75; margin: 0; }
