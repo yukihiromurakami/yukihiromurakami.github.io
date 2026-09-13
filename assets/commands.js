@@ -156,6 +156,11 @@
   let burnGame = null;
   let wiperAnimation = null;
 
+  function focusPanelContent() {
+    const target = panel.classList.contains('command-playing') ? document.getElementById('burn-game') : input;
+    target.focus({ preventScroll: true });
+  }
+
   function stopWiper() {
     if (wiperAnimation) wiperAnimation.cancel();
     wiperAnimation = null;
@@ -194,7 +199,7 @@
       }
       burnGame = window.BurnPuzzle.mount(root, {
         report: message => print(message, 'command-error'),
-        focusInput: () => input.focus({ preventScroll: true }),
+        focusControls: focusPanelContent,
         onVisibility: visible => {
           panel.classList.toggle('command-playing', visible);
           input.placeholder = visible ? 'burn A' : 'cd /Education';
@@ -202,6 +207,7 @@
       });
     }
     burnGame.run(argument);
+    focusPanelContent();
   }
 
   function openPanel() {
@@ -209,7 +215,7 @@
     previousFocus = focused && focused !== document.body && focused !== document.documentElement ? focused : launcher;
     panel.showModal();
     document.documentElement.classList.add('command-open');
-    input.focus();
+    focusPanelContent();
   }
   function closePanel() { panel.close(); }
   function navigateInTerminal(path) {
@@ -312,7 +318,7 @@
     }
     print('> ' + raw, 'command-echo');
     if (result.type === 'wiper') { sweepTerminal(); input.focus({ preventScroll: true }); return; }
-    if (result.type === 'burn') { runBurn(result.argument); input.focus(); return; }
+    if (result.type === 'burn') { runBurn(result.argument); return; }
     if (result.type === 'error') print(result.message, 'command-error');
     if (result.type === 'pwd') print(currentDirectory);
     if (result.type === 'ls') printDirectory(result.entries);

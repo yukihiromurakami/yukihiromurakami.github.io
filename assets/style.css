@@ -15,7 +15,7 @@
 }
 * { box-sizing: border-box; }
 /* Keep centered content aligned when a page or the terminal hides the scrollbar. */
-html { scrollbar-gutter: stable; scroll-behavior: smooth; scroll-padding-top: calc(var(--header-height, 95px) + 1rem); }
+html { overflow-y: scroll; scrollbar-gutter: stable; scroll-behavior: smooth; scroll-padding-top: calc(var(--header-height, 95px) + 1rem); }
 body { margin: 0; background: linear-gradient(180deg, #f5f8fa 0, var(--paper) 28rem); color: var(--body); font-family: var(--sans); font-size: 1rem; line-height: 1.75; -webkit-font-smoothing: antialiased; }
 a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: .24em; }
 a:hover { text-decoration: underline; color: var(--ink); }

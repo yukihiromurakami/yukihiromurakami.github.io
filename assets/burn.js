@@ -93,10 +93,11 @@
     for (const [text, command] of [['Retry', 'reset'], ['Next puzzle', 'next'], ['Leave game', 'quit']]) {
       const button = element('button', '', text);
       button.type = 'button';
-      button.addEventListener('click', () => { run(command); options.focusInput(); });
+      button.addEventListener('click', () => { run(command); options.focusControls(); });
       controls.append(button);
     }
     root.classList.add('burn-game');
+    root.tabIndex = -1;
     root.setAttribute('role', 'region');
     root.setAttribute('aria-labelledby', title.id);
     root.setAttribute('aria-describedby', rules.id);
@@ -131,7 +132,7 @@
         button.style.top = y + '%';
         button.addEventListener('click', () => {
           play(vertex);
-          options.focusInput();
+          options.focusControls();
         });
         nodeButtons.push(button);
         board.append(button);
