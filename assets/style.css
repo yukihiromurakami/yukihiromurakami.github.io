@@ -467,7 +467,7 @@ html.command-open { overflow: hidden; }
   .events-page .content-section { grid-template-columns: 1fr; gap: .9rem; padding-block: 1.4rem; }
   .events-page .page-intro { padding-block: 1.6rem 1rem; }
   /* Seal the space under the main header as content passes behind a section title. */
-  .site-header { background: var(--paper); }
+  .site-header { background: var(--paper); backdrop-filter: none; }
   .education-page .content-section > .section-label,
   .research-page #preprints > .section-label,
   .research-page #journal-publications > .section-label,
@@ -477,22 +477,12 @@ html.command-open { overflow: hidden; }
     padding: .55rem 1.25rem;
     box-shadow: 0 1px 0 var(--line);
   }
-  /* Extend the opaque cover upward without moving the heading or adding layout space. */
-  .education-page .content-section > .section-label::before,
-  .research-page #preprints > .section-label::before,
-  .research-page #journal-publications > .section-label::before,
-  .events-page .content-section > .section-label::before {
-    content: '';
-    position: absolute;
-    inset-inline: 0;
-    bottom: calc(100% - 1px);
-    height: calc(1rem + 1px);
-    background: var(--paper);
-    pointer-events: none;
-  }
 }
 /* Translate content, never the ancestors of the fixed controls or main header. */
 html.swipe-active { overflow-x: hidden; }
+/* Programmatic page focus announces navigation without outlining the whole page. */
+.page-shell[tabindex="-1"]:focus { outline: none; }
+.swipe-ready .page-shell, .swipe-ready .site-footer { will-change: transform; }
 .swipe-active .page-shell, .swipe-active .site-footer {
   position: relative;
   z-index: 3;

@@ -148,6 +148,7 @@
   }
   updateDirectory();
   window.addEventListener('hashchange', updateDirectory);
+  window.addEventListener('site:pagechange', updateDirectory);
   launcher.hidden = false;
   let previousFocus = null;
   const history = [];
