@@ -7,13 +7,15 @@
     { name: 'Research', path: 'research.html' },
     { name: 'Education', path: 'education.html' },
     { name: 'Events-Talks', path: 'organization.html' },
-    { name: 'CV', path: 'cv.html' }
+    { name: 'CV', path: 'cv.html' },
+    { name: 'Books', path: 'books.html' }
   ]);
   const sectionDefinitions = {
     Research: [['Preprints', 'preprints'], ['Publications', 'journal-publications'], ['Thesis', 'doctoral-thesis']],
     Education: [['Projects', 'projects'], ['Supervision', 'supervision'], ['Postdoc', 'postdoc'], ['PhD', 'phd'], ['MSc', 'msc-theses'], ['BSc', 'bsc-theses'], ['Lectures', 'lectures'], ['Exercise-Classes', 'exercise-classes']],
     'Events-Talks': [['Events', 'events'], ['Talks', 'talks']],
-    CV: [['Appointment', 'appointments'], ['Education', 'qualifications'], ['Research', 'interests'], ['Service', 'education-service']]
+    CV: [['Appointment', 'appointments'], ['Education', 'qualifications'], ['Research', 'interests'], ['Service', 'education-service']],
+    Books: []
   };
   const directories = [{ name: '/', directory: '/', path: 'index.html', parent: null }];
   for (const page of pages.filter(page => page.name !== 'Home')) {

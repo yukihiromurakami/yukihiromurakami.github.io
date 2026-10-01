@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Books read, organized by the month I finished them.">
+  <meta name="theme-color" content="#1f6078">
+  
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://yukimurakami.nl/books.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yukimurakami.nl/books.html">
+  <meta property="og:title" content="Books — Yukihiro Murakami">
+  <meta property="og:description" content="Books read, organized by the month I finished them.">
+  <meta property="og:image" content="https://yukimurakami.nl/assets/yukihiro-murakami.jpg">
+  <meta property="og:image:alt" content="Yukihiro Murakami">
+  <title>Books — Yukihiro Murakami</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css?v=35">
+  <script src="assets/layout.js?v=1" defer></script>
+  <script src="assets/swipe.js?v=3" defer></script>
+  <script src="assets/burn.js?v=2" defer></script>
+  <script src="assets/commands.js?v=14" defer></script>
+</head>
+<body id="top" class="inner-page books-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="wordmark" href="index.html" aria-label="Yukihiro Murakami, home">Y. Murakami</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="education.html">Education</a>
+        <a href="organization.html">Events &amp; Talks</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="page-shell">
+    <section class="reading-year" aria-labelledby="reading-2026">
+      <h1 id="reading-2026" class="reading-year-title">2026</h1>
+      <div class="reading-log">
+        <section class="reading-month" aria-labelledby="october-2026">
+          <h2 id="october-2026">October</h2>
+          <ul>
+            <li><cite>Flatland</cite><span class="book-author"> — Edwin A. Abbott</span></li>
+            <li><cite>My Life in the Bush of Ghosts</cite><span class="book-author"> — Amos Tutuola</span> <span title="Book club">(BC)</span></li>
+          </ul>
+        </section>
+        <section class="reading-month" aria-labelledby="september-2026">
+          <h2 id="september-2026">September</h2>
+          <ul>
+            <li><cite>East of Eden</cite><span class="book-author"> — John Steinbeck</span></li>
+            <li lang="ja"><cite>いかめしの丸かじり</cite><span class="book-author"> — 東海林さだお</span></li>
+          </ul>
+        </section>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><span>Yukihiro Murakami · TU Delft</span><a href="mailto:y.murakami@tudelft.nl">y dot murakami at tudelft dot nl</a></div></footer>
+  <a class="back-to-top" href="#top" aria-label="Back to top" title="Back to top"><span aria-hidden="true">↑</span></a>
+  <button class="command-launcher" type="button" aria-label="Open command line" title="Open command line (`)" aria-haspopup="dialog" aria-controls="command-panel" aria-keyshortcuts="`" hidden><span aria-hidden="true">&gt;_</span></button>
+  <dialog id="command-panel" class="command-panel" aria-labelledby="command-title" aria-describedby="command-hint">
+    <div class="command-toolbar"><h2 id="command-title">Site terminal <span id="command-location"></span></h2><button class="command-close" type="button" aria-label="Close command line">Esc <span aria-hidden="true">×</span></button></div>
+    <div class="command-content">
+      <p id="command-hint">Use <code>ls</code> to explore this directory, <code>ls /</code> for main pages, or <code>help</code> for commands.</p>
+      <div id="command-output" class="command-output" role="log" aria-live="polite" aria-relevant="additions"></div>
+      <div id="burn-game" hidden></div>
+      <form id="command-form" class="command-form">
+        <span class="command-prompt" aria-hidden="true">&gt;</span>
+        <input id="command-input" name="command" type="text" aria-label="Command" placeholder="cd /Education" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="go">
+        <button type="submit" aria-label="Run command">↵</button>
+      </form>
+      <p class="command-keys"><kbd>Tab</kbd> complete <span aria-hidden="true">·</span> <kbd>↑</kbd> <kbd>↓</kbd> history <span aria-hidden="true">·</span> <kbd>Esc</kbd> close</p>
+    </div>
+  </dialog>
+</body>
+</html>
